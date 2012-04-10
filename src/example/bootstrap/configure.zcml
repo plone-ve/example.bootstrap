@@ -1,0 +1,48 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="example.bootstrap">
+
+  <five:registerPackage package="." initialize=".initialize" />
+
+  <include package="plone.resource" file="meta.zcml"/>
+
+  <!-- Resource traverser -->
+  <adapter
+      name="bootstrap"
+      for="* zope.publisher.interfaces.IRequest"
+      provides="zope.traversing.interfaces.ITraversable"
+      factory=".traversal.ThemeTraverser"
+      />
+
+  <plone:static
+      directory="resources/less"
+      type="bootstrap"
+      name="less"
+      />
+
+  <plone:static
+      directory="resources/js"
+      type="bootstrap"
+      name="js"
+      />
+
+  <plone:static
+      directory="resources/img"
+      type="bootstrap"
+      name="img"
+      />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="example.bootstrap"
+      directory="profiles/default"
+      description="Installs the example.bootstrap package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <!-- -*- extra stuff goes here -*- -->
+
+</configure>
