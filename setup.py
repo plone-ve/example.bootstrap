@@ -16,17 +16,18 @@ long_description = (
 
 setup(name='example.bootstrap',
       version=version,
-      description="",
+      description="Example base product for develop a Plone theme with Twitter Bootstrap using collective.lesscss",
       long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
+        "Framework :: Plone",
         "Programming Language :: Python",
         ],
-      keywords='',
-      author='',
-      author_email='',
-      url='http://svn.plone.org/svn/collective/',
+      keywords='plone twitter bootstrap less js',
+      author='Victor Fernandez de Alba',
+      author_email='sneridagh@gmail.com',
+      url='https://github.com/sneridagh/example.bootstrap',
       license='gpl',
       packages=find_packages('src'),
       package_dir = {'': 'src'},
@@ -35,6 +36,7 @@ setup(name='example.bootstrap',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'collective.lesscss',
           'plone.resource'
           # -*- Extra requirements: -*-
       ],
