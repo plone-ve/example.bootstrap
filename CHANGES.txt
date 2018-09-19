@@ -4,6 +4,10 @@ Changelog
 1.0dev (unreleased)
 -------------------
 
+- Added the collective.lesscss as dependency from 
+  GenericSetup default profile
+  [macagua]
+
 - Added more keywords and strings classifiers items 
   and updated others items for this package
   [macagua]
